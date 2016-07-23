@@ -9,9 +9,13 @@
   </form>
   
     <div class="todo-list">
-      <div v-for="item in items" class="list-item pure-g">
-        <div class="pure-u-2-3">{{item}} </div>
-        <a class="pure-button remove pure-u-1-3" v-on:click="removeItem(item)">delete</a>
+      <div v-for="item in items " class="list-item pure-g" v-bind:class="{'done': item.done}">
+        <div class="pure-u-2-3 item-content">{{item.content}} </div>
+        <div class="actions pure-u-1-3">
+          <a class="action" v-show="!item.done" v-on:click="toggleDone(item)">done</a>
+          <a class="action" v-show="item.done" v-on:click="toggleDone(item)">undo</a> |
+          <a class="action remove" v-on:click="removeItem(item)">delete</a>
+        </div>
       </div>
     </div>
   </div>
@@ -25,14 +29,17 @@ export default {
       newItem: '',
       title: 'Todo List App',
       items: [
-        'Get Milk',
+        {
+          content: 'Get Milk',
+          done: true
+        }
       ]
     }
   },
 
   methods: {
     addItem() {
-      this.items.push(this.newItem)
+      this.items.push({content: this.newItem, done: false})
     },
 
     removeItem (item) {
@@ -40,6 +47,10 @@ export default {
       if (index !== -1) {
         this.items.splice(index, 1)
       }
+    },
+
+    toggleDone(item) {
+      item.done = !item.done
     }
   }
 }

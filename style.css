@@ -24,12 +24,30 @@ hr {
 	font-size: 20px;
 }
 
-.todo-list .remove{
-	font-style: italic;
-	font-size: 14px;
-}
 
 .list-item {
 	padding: 10px 0px 10px 0px;
 }
 
+.done{
+	opacity: 0.4;
+}
+
+.done .item-content {
+	text-decoration: line-through;
+}
+
+.actions {
+	font-size: 15px;
+	line-height: 22px;
+	height: 22px;
+	cursor: pointer;
+}
+
+.action {
+	color: blue;
+}
+
+.action.remove {
+	color: red;
+}
