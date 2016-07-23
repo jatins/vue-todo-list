@@ -1,0 +1,35 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+#app {
+	width: 60%;
+	margin: auto;
+}
+
+form {
+	margin: 20px 0px 20px 0px;
+	width: 50%;
+}
+
+hr {
+	border: 1px solid rgba(0,0,0,0.1)
+}
+
+.todo-list{
+	width: 50%;
+}
+
+.todo-list .list-item{
+	font-size: 20px;
+}
+
+.todo-list .remove{
+	font-style: italic;
+	font-size: 14px;
+}
+
+.list-item {
+	padding: 10px 0px 10px 0px;
+}
+
