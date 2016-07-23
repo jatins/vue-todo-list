@@ -1,6 +1,6 @@
 <template>
 	 <div class="todo-list">
-      <div v-for="item in items " >
+      <div v-for="item in items | orderBy 'done'" >
         <list-item :item="item" ></list-item>
       </div>
     </div>

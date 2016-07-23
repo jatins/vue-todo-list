@@ -1,5 +1,4 @@
 # todo-list-1.0
-
 > Todo List app
 
 ## Build Setup
@@ -15,4 +14,4 @@ npm run dev
 npm run build
 ```
 
-For more information see the [docs for vueify](https://github.com/vuejs/vueify).
+Tutorial link: https://jatins.gitlab.io/me/posts/vue-js-components-all-the-way-down/

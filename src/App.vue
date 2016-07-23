@@ -8,7 +8,7 @@
       <a class="add-item btn pure-button pure-u-1-3" v-on:click="addItem">Add</a>
     </form>
   
-    <todo-list :items="items"></todo-list>
+    <todo-list :items="items" v-on:remove="removeItem"></todo-list>
   </div>
 
 </template>
@@ -35,15 +35,11 @@ export default {
       this.items.push({content: this.newItem, done: false})
       this.newItem = ''
     },
+    
     removeItem (item) {
-      var index = this.items.indexOf(item)
-      if (index !== -1) {
-        this.items.splice(index, 1)
-      }
+      this.items.$remove(item)
     },
-    toggleDone(item) {
-      item.done = !item.done
-    }
+    
   },
 
   components: {

@@ -13,6 +13,15 @@
 export default {
   props: ['item'],
   methods: {
+    toggleDone(item) {
+      item.done = !item.done
+    },
+
+    removeItem(item) {
+      this.$dispatch('remove', item)
+    }
+
+
   }
 }
 </script>
